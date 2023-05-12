@@ -7,6 +7,7 @@ const cors = require('cors');
 const dbo = require('./db/conn');
 
 const PORT = process.env.PORT || 3000;
+
 const app = express();
 
 app.use(cors());
@@ -27,7 +28,5 @@ dbo.connectToServer(function (err) {
   }
 
   // start the Express server
-  app.listen(PORT, () => {
-    console.log(`Server is running on port: ${PORT}`);
-  });
+  app.listen(process.env.PORT || 3000);
 });
